@@ -4,5 +4,13 @@
   "main": "index.js",
   "repository": "git@github.com:tatyshev/given2.git",
   "author": "Ruslan Tatyshev <ruslan.tatyshev@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint *.js"
+  },
+  "devDependencies": {
+    "eslint": "^4.8.0",
+    "eslint-config-airbnb-base": "^12.0.2",
+    "eslint-plugin-import": "^2.7.0"
+  }
 }

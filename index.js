@@ -1,4 +1,6 @@
-export function Given(callback) {
+/* eslint no-use-before-define: 0 */
+
+export default function Given(callback) {
   function define(key, getter, options = {}) {
     const env = given.__env__;
     const { cache } = options;
@@ -9,13 +11,14 @@ export function Given(callback) {
       if (cache === false) return getter();
       if (env[key]) return env[key];
 
-      return (env[key] = getter());
+      env[key] = getter();
+      return env[key];
     }
 
     Object.defineProperty(given, key, {
       enumerable: true,
       configurable: true,
-      get: function () {
+      get: () => {
         if (handler.in) throw new Error(`Given2: Recursive dependency in given "${key}"`);
 
         handler.in = true;

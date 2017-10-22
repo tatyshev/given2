@@ -6,11 +6,16 @@
   "author": "Ruslan Tatyshev <ruslan.tatyshev@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "lint": "eslint *.js"
+    "lint": "eslint *.js",
+    "test": "jasmine --config=config/jasmine.json"
   },
   "devDependencies": {
     "eslint": "^4.8.0",
     "eslint-config-airbnb-base": "^12.0.2",
-    "eslint-plugin-import": "^2.7.0"
+    "eslint-plugin-import": "^2.7.0",
+    "jasmine": "^2.8.0"
+  },
+  "dependencies": {
+    "window-or-global": "^1.0.1"
   }
 }

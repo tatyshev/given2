@@ -9,14 +9,16 @@
     "lint": "eslint *.js",
     "test:jasmine": "jasmine --config=config/jasmine.json",
     "test:jest": "jest --config=config/jest.json",
-    "test": "npm run test:jasmine && npm run test:jest"
+    "test:mocha": "mocha mocha.js spec/mocha.spec.js",
+    "test": "npm run test:jasmine && npm run test:jest && npm run test:mocha"
   },
   "devDependencies": {
     "eslint": "^4.8.0",
     "eslint-config-airbnb-base": "^12.0.2",
     "eslint-plugin-import": "^2.7.0",
     "jasmine": "^2.8.0",
-    "jest": "^21.2.1"
+    "jest": "^21.2.1",
+    "mocha": "^4.0.1"
   },
   "dependencies": {
     "window-or-global": "^1.0.1"

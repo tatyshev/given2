@@ -7,13 +7,16 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint *.js",
-    "test": "jasmine --config=config/jasmine.json"
+    "test:jasmine": "jasmine --config=config/jasmine.json",
+    "test:jest": "jest --config=config/jest.json",
+    "test": "npm run test:jasmine && npm run test:jest"
   },
   "devDependencies": {
     "eslint": "^4.8.0",
     "eslint-config-airbnb-base": "^12.0.2",
     "eslint-plugin-import": "^2.7.0",
-    "jasmine": "^2.8.0"
+    "jasmine": "^2.8.0",
+    "jest": "^21.2.1"
   },
   "dependencies": {
     "window-or-global": "^1.0.1"

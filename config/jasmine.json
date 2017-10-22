@@ -1,4 +1,3 @@
 {
-  "spec_dir": "spec",
-  "spec_files": ["**/*.spec.js"]
+  "spec_files": ["jasmine.js", "spec/jasmine.spec.js"]
 }

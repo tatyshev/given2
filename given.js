@@ -53,23 +53,23 @@ module.exports = function Given(callback) {
     }
   }
 
-  given.length = undefined;
-  given.name = undefined;
-  given.apply = undefined;
-  given.call = undefined;
-  given.caller = undefined;
-  given.bind = undefined;
-  given.arguments = undefined;
-  given.constructor = undefined;
-  given.toString = undefined;
-  given.toString = undefined;
-  given.asPromise = undefined;
-  given.toString = undefined;
-  given.hasOwnProperty = undefined;
-  given.isPrototypeOf = undefined;
-  given.propertyIsEnumerable = undefined;
-  given.toLocaleString = undefined;
-  given.valueOf = undefined;
+  delete given.length;
+  delete given.name;
+  delete given.apply;
+  delete given.call;
+  delete given.caller;
+  delete given.bind;
+  delete given.arguments;
+  delete given.constructor;
+  delete given.toString;
+  delete given.toString;
+  delete given.asPromise;
+  delete given.toString;
+  delete given.hasOwnProperty;
+  delete given.isPrototypeOf;
+  delete given.propertyIsEnumerable;
+  delete given.toLocaleString;
+  delete given.valueOf;
 
   Object.defineProperty(given, '__env__', {
     configurable: false,

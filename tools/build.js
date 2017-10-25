@@ -18,7 +18,7 @@ function pack(file) {
   bundle.then(function (bundle) {
     var bundled = bundle.generate({
       format: 'umd',
-      name: 'given2'
+      name: 'given'
     });
 
     bundled.then(function (bundled) {

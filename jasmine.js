@@ -6,7 +6,7 @@
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
 	typeof define === 'function' && define.amd ? define(factory) :
-	(global.given2 = factory());
+	(global.given = factory());
 }(this, (function () { 'use strict';
 
 var global$1 = typeof global !== "undefined" ? global :

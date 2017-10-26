@@ -26,7 +26,5 @@
     "rollup-plugin-node-globals": "^1.1.0",
     "rollup-plugin-uglify": "^2.0.1"
   },
-  "dependencies": {
-    "window-or-global": "^1.0.1"
-  }
+  "dependencies": {}
 }

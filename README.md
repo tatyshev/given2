@@ -1,5 +1,5 @@
 # Given2
-> Lazy variable evaluation for js specs, inspired by [rspec](http://rspec.info/) and [given.js](https://github.com/freshtonic/given.js)
+> Lazy variable evaluation for js specs, inspired by rspec and given.js
 
 Basically the `given` helper will register a `beforeEach` and a `afterEach` hook that will create a memoized get accessor with the given name. The value will be cached across multiple calls in the same example but not across examples.
 

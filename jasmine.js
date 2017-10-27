@@ -1,5 +1,5 @@
 /*!
- * Given2 v0.0.0
+ * Given2 v1.0.1
  * (c) 2017 Ruslan Tatyshev
  * Released under the MIT License.
  */

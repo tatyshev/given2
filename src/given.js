@@ -33,6 +33,13 @@ export default function Given(callback) {
     });
   }
 
+  function cut(property) {
+    Object.defineProperty(given, property, {
+      configurable: true,
+      enumerable: false,
+    });
+  }
+
   function given(key, getter, options = {}) {
     if (RESERVED.test(key)) {
       throw new Error(`Given2: "${key}" key is reserved`);
@@ -53,23 +60,22 @@ export default function Given(callback) {
     }
   }
 
-  delete given.length;
-  delete given.name;
-  delete given.apply;
-  delete given.call;
-  delete given.caller;
-  delete given.bind;
-  delete given.arguments;
-  delete given.constructor;
-  delete given.toString;
-  delete given.toString;
-  delete given.asPromise;
-  delete given.toString;
-  delete given.hasOwnProperty;
-  delete given.isPrototypeOf;
-  delete given.propertyIsEnumerable;
-  delete given.toLocaleString;
-  delete given.valueOf;
+  cut('length');
+  cut('name');
+  cut('apply');
+  cut('call');
+  cut('caller');
+  cut('bind');
+  cut('arguments');
+  cut('constructor');
+  cut('toString');
+  cut('asPromise');
+  cut('toString');
+  cut('hasOwnProperty');
+  cut('isPrototypeOf');
+  cut('propertyIsEnumerable');
+  cut('toLocaleString');
+  cut('valueOf');
 
   Object.defineProperty(given, '__env__', {
     configurable: false,

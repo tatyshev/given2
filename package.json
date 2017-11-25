@@ -6,11 +6,15 @@
   "author": "Ruslan Tatyshev <ruslan.tatyshev@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "test": "jest",
+    "debug": "node --inspect-brk node_modules/jest/bin/jest.js --runInBand"
   },
   "devDependencies": {
     "eslint": "^4.8.0",
     "eslint-config-airbnb-base": "^12.0.2",
     "eslint-plugin-import": "^2.7.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "jest": "^21.2.1"
+  }
 }

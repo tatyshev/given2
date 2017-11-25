@@ -1,10 +1,7 @@
 {
   "extends": "airbnb-base",
   "env": {
-    "jasmine": true
-  },
-  "globals": {
-    "given": true
+    "jest": true
   },
   "rules": {
     "no-underscore-dangle": [0]

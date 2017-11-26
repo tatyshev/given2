@@ -154,15 +154,23 @@ module.exports = function Container(context) {
     configurable: false,
     enumerable: false,
     writable: false,
-    value: (key) => {
-      if (key) {
-        delete given.__env__[key];
-        return;
-      }
-
+    value: () => {
       const keys = Object.keys(given.__env__);
       given.__env__ = {};
       keys.forEach(k => delete given[k]);
+    },
+  });
+
+  Object.defineProperty(given, '__reset__', {
+    configurable: false,
+    enumerable: false,
+    writable: false,
+    value: (key) => {
+      if (key) {
+        given.__env__[key] = undefined;
+      } else {
+        given.__env__ = {};
+      }
     },
   });
 

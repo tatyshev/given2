@@ -104,4 +104,32 @@ describe('Container', () => {
       expect(() => given.foo).toThrow('fakeError'); // eslint-disable-line no-unused-expressions
     });
   });
+
+  describe('__clear__', () => {
+    it('should clear cache', () => {
+      given('one', () => 1);
+      given('two', () => 2);
+
+      given.__clear__();
+
+      expect(given.one).toBeUndefined();
+      expect(given.two).toBeUndefined();
+    });
+  });
+
+  describe('__reset__', () => {
+    it('should clear cache', () => {
+      const fn = jest.fn();
+
+      given('foo', fn);
+
+      given.foo; // eslint-disable-line no-unused-expressions
+
+      given.__reset__('foo');
+
+      given.foo; // eslint-disable-line no-unused-expressions
+
+      expect(fn).toHaveBeenCalledTimes(2);
+    });
+  });
 });

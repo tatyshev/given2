@@ -1,7 +1,7 @@
 {
   "name": "given2",
   "version": "1.0.3",
-  "main": "index.js",
+  "main": "src/given.js",
   "repository": "git@github.com:tatyshev/given2.git",
   "author": "Ruslan Tatyshev <ruslan.tatyshev@gmail.com>",
   "license": "MIT",

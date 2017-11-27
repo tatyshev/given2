@@ -80,7 +80,7 @@ const parseProp = (key) => {
   return defaults;
 };
 
-module.exports = function Container(next) {
+module.exports = function Container(run) {
   function define(options, fn) {
     const env = given.__env__;
     const { name, immediate, cache } = options;
@@ -134,10 +134,10 @@ module.exports = function Container(next) {
       ]);
     }
 
-    if (typeof next !== 'function') {
+    if (typeof run !== 'function') {
       define(options, fn);
     } else {
-      next(() => define(options, fn));
+      run(() => define(options, fn));
     }
   }
 

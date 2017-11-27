@@ -1,13 +1,25 @@
 const Container = require('./container');
 
+const before = (fn) => {
+  if (typeof beforeEach === 'function') {
+    beforeEach(fn);
+  }
+};
+
+const after = (fn) => {
+  if (typeof afterEach === 'function') {
+    afterEach(fn);
+  }
+};
+
 let it = false;
 
-const given = Container((next) => {
-  if (it) next();
-  else beforeEach(() => next());
+const given = Container((run) => {
+  if (it) run();
+  else before(() => run());
 });
 
-beforeEach(() => { it = true; });
-afterEach(() => { it = false; given.__clear__(); });
+before(() => { it = true; });
+after(() => { it = false; given.__clear__(); });
 
 module.exports = given;

@@ -9,7 +9,8 @@
     "test": "npm run test:jest && npm run test:jasmine && npm run test:mocha",
     "test:jest": "jest",
     "test:jasmine": "jasmine src/given.spec.js",
-    "test:mocha": "mocha src/given.mocha.js"
+    "test:mocha": "mocha src/given.mocha.js",
+    "announce": "webpack src/given.js standalone.js && npm publish"
   },
   "devDependencies": {
     "chai": "^4.1.2",

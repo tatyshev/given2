@@ -1,8 +1,8 @@
-<h3 align="center">Given2</h3>
+<h1 align="center">Given2</h1>
 
 <p align="center">
   <img src="https://img.shields.io/npm/v/given2.svg"/>
-  <img src="https://img.shields.io/npm/dw/given2.svg"/>
+  <img src="https://img.shields.io/npm/dm/given2.svg"/>
   <img src="https://travis-ci.org/tatyshev/given2.svg?branch=v2"/>
 </p>
 

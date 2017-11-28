@@ -53,18 +53,6 @@ describe('Example', () => {
 
 ## More examples
 
-```js
-describe('given', () => {
-  given('one', () => 1);
-  given('two', () => 2);
-
-  it('memoizes the value', () => {
-    expect(given.one).toBe(1);
-    expect(given.two).toBe(2);
-  });
-});
-```
-
 The `given2` variables are evaluated only once and are cached within a single test suite, and reset the cache after each suite.
 
 ```js

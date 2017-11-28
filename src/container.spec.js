@@ -51,9 +51,10 @@ describe('Container', () => {
 
   describe('immediate', () => {
     it('should call handler immediately', () => {
-      const fn = jest.fn();
+      const fn = jest.fn(() => 'bar');
       given('!foo', fn);
       expect(fn).toHaveBeenCalled();
+      expect(given.__env__.foo).toBe('bar');
     });
   });
 

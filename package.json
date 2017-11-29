@@ -1,6 +1,6 @@
 {
   "name": "given2",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "main": "src/given.js",
   "description": "Lazy variable evaluation for Jasmine, Mocha, Jest specs, inspired by Rspec's let",
   "repository": "git@github.com:tatyshev/given2.git",

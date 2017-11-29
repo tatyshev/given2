@@ -1,6 +1,0 @@
-{
-  "roots": ["../spec"],
-  "setupTestFrameworkScriptFile": "../jest.js",
-  "testEnvironment": "node",
-  "testRegex": "jest\\.spec\\.js$"
-}

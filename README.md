@@ -1,66 +1,59 @@
-# Given2
-> Lazy variable evaluation for js specs, inspired by rspec and given.js
+<h1 align="center">Given2</h1>
 
-Basically the `given` helper will register a `beforeEach` and a `afterEach` hook that will create a memoized get accessor with the given name. The value will be cached across multiple calls in the same example but not across examples.
+<p align="center">
+  <a href="https://www.npmjs.com/package/given2">
+    <img src="https://img.shields.io/npm/v/given2.svg"/>
+  </a>
 
-> Note that `given` variables is lazy-evaluated: it is not evaluated until the first time the method it defines is invoked.
+  <a href="https://www.npmjs.com/package/given2">
+    <img src="https://img.shields.io/npm/dm/given2.svg"/>
+  </a>
 
-# Installation
+  <img src="https://travis-ci.org/tatyshev/given2.svg?branch=v2"/>
+</p>
+
+<p align="center">
+  <code>Yet another way to make the process of testing in JavaScript better.</code>
+</p>
+
+<p align="center">
+  <img src="https://github.com//tatyshev/given2/blob/v2/static/example.png?raw=true"/>
+</p>
+
+> Currently `given2` supports only `jasmine`, `mocha` and `jest`.
+
+Basically the given helper will register a beforeEach and a afterEach hook that will create a memoized get accessor with the given name. The value will be cached across multiple test suits in the same example but not across examples.
+
+Note that `given` variables is lazy-evaluated: data in the variables are not calculated until they are accessed for the first time.
+
+## Installation
 
 You can install given2 using `npm` or `yarn`
 
 ```
 npm install given2
+yarn add given2
 ```
 
-The next steps depend on which test framework you are using. `Given2` supports  [jest](https://facebook.github.io/jest/), [jasmine](https://jasmine.github.io/), [mocha](https://mochajs.org/). For each framework there is an installation files:
+## Usage
 
-* `given2/jasmine`
-* `given2/jest`
-* `given2/mocha`
-
-You can just import it into any of your setup or spec files like: `import 'given2/jest'`
-
-Also it can be done in the framework specific configurations:
-
-### Jest
-
-```
-{
-  "setupTestFrameworkScriptFile": "./node_modules/given2/jest.js"
-}
-```
-
-### Jasmine
-
-```
-{
-  "helpers": ["./node_modules/given2/jasmine.js"]
-}
-```
-
-### Mocha
-Just add the path to `given/mocha.js` before running your tests:
-
-```
-mocha ./node_modules/given2/mocha.js yourTests.js
-```
-
-# Usage examples
+To use given you just need to require or import the `given2` module in your spec files
 
 ```js
-describe('given', () => {
-  given('one', () => 1);
-  given('two', () => 2);
+import given from 'given2'
 
-  it('memoizes the value', () => {
-    expect(given.one).toBe(1);
-    expect(given.two).toBe(2);
-  });
-});
+describe('Example', () => {
+  given('foo', () => 'bar');
+
+  it('foo should be "bar"', () => {
+    expect(given.foo).toBe('bar');
+  })
+})
 ```
 
-Caching behavior
+## More examples
+
+The `given2` variables are evaluated only once and are cached within a single test suite, and reset the cache after each suite.
 
 ```js
 let count = 0;
@@ -81,7 +74,7 @@ describe('given', () => {
 });
 ```
 
-Only `function` allowed as a value
+The values must be functions otherwise you will get an error.
 
 ```js
 describe('given', () => {
@@ -92,7 +85,7 @@ describe('given', () => {
 });
 ```
 
-Recursive dependency detection
+When you try to use the variable given, recursively `given2` tells you about it.
 
 ```js
 describe('given', () => {
@@ -105,11 +98,11 @@ describe('given', () => {
 });
 ```
 
-You can disable caching
+If you want the variable values not to be cached, use `@` prefix. All variables that begin with this prefix will not be cached.
 
 ```js
 describe('given', () => {
-  given('random', { cache: false }, () => Math.random());
+  given('@random', () => Math.random());
 
   it('should not cache', () => {
     const cached = given.random;
@@ -121,53 +114,23 @@ describe('given', () => {
 });
 ```
 
-You can use `given` inside any context `describe/it` etc...
+Also you can get the values of the variables immediately, right after the declaration, with the prefix '!'
 
 ```js
 describe('given', () => {
-  // given will wrap it into beforeEach
-  given('one', () => 1);
-  given('two', () => 2);
+  given('!invoice', () => {
+    const invoice = Invoice.create({ price: 5 })
+    invoice.paid(3)
+    return invoice;
+  });
 
-  it('should change value', () => {
-    given('two', () => 3);
+  given('status', () => given.invoice);
 
-    expect(given.one).not.toBe(1);
-    expect(given.two).not.toBe(3); // the value will be equal to 3
+  it('should be "paid"', () => {
+    expect(given.status).toBe("paid");
   });
 });
 ```
 
-How to reset cached value?
 
-```js
-describe('given', () => {
-  given('random', () => Math.random());
 
-  it('should reset cached value', () => {
-    const cached = given.random;
-
-    // just set value to undefined
-    given.random = undefined;
-
-    expect(given.random).not.toBe(cached);
-  });
-});
-```
-
-How to reset all cached values?
-
-```js
-describe('given', () => {
-  given('random', () => Math.random());
-
-  it('should reset all cached values', () => {
-    const cached = given.random;
-
-    // You can use __clear__ method
-    given.__clear__();
-
-    expect(given.random).not.toBe(cached);
-  });
-});
-```

@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-  <code>Yet another story about how can we made the JavaScript testing process better.</code>
+  <code>Yet another way to make the process of testing in JavaScript better.</code>
 </p>
 
 <p align="center">

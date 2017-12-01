@@ -1,6 +1,7 @@
 /* eslint no-use-before-define: 0 */
 /* eslint no-param-reassign: 0 */
 
+const RESERVED = ['name', 'length', 'caller', 'arguments'];
 const REG_RESERVED = /^__(.+?)__$/;
 
 function Given2Error(msg) {
@@ -11,16 +12,11 @@ function Given2Error(msg) {
 }
 
 const ensureProperty = (property) => {
-  switch (property) {
-    case 'name':
-    case 'length':
-    case 'caller':
-    case 'arguments':
-      throw new Given2Error([
-        'Can not override the "length", "caller", "arguments" and "name" properties.',
-        'Could you use a another property name?',
-      ]);
-    default:
+  if (RESERVED.indexOf(property) !== -1) {
+    throw new Given2Error([
+      'Can not override the "length", "caller", "arguments" and "name" properties.',
+      'Could you use a another property name?',
+    ]);
   }
 
   if (REG_RESERVED.test(property)) {
@@ -60,7 +56,6 @@ const parseProp = (key) => {
     name: key,
     immediate: false,
     cache: true,
-    recursive: false,
   };
 
   if (prefix === '!') {

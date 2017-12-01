@@ -28,7 +28,7 @@ Note that `given` variables is lazy-evaluated: data in the variables are not cal
 
 ## Installation
 
-You can install given2 using `npm` or `yarn`
+You can install `given2` using `npm` or `yarn`
 
 ```
 npm install given2
@@ -114,7 +114,7 @@ describe('given', () => {
 });
 ```
 
-Also you can get the values of the variables immediately, right after the declaration, with the prefix '!'
+Also you can get the values of the variables immediately, right after the declaration, with the prefix `!`
 
 ```js
 describe('given', () => {

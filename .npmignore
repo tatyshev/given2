@@ -1,5 +1,6 @@
-config
-spec
-src
-tools
 .eslintrc.json
+.travis.yml
+*.config.js
+*.md
+static/
+

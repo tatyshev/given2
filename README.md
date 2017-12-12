@@ -117,17 +117,13 @@ describe('given', () => {
 Also you can get the values of the variables immediately, right after the declaration, with the prefix `!`
 
 ```js
+let counter = 1;
+
 describe('given', () => {
-  given('!invoice', () => {
-    const invoice = Invoice.create({ price: 5 })
-    invoice.paid(3)
-    return invoice;
-  });
+  given('!next', () => counter += 1);
 
-  given('status', () => given.invoice);
-
-  it('should be "paid"', () => {
-    expect(given.status).toBe("paid");
+  it('should be 2', () => {
+    expect(given.next).toBe(2);
   });
 });
 ```

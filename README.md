@@ -123,7 +123,7 @@ describe('given', () => {
   given('!next', () => counter += 1);
 
   it('should be 2', () => {
-    expect(given.next).toBe(2);
+    expect(counter).toBe(2);
   });
 });
 ```

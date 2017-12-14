@@ -28,6 +28,8 @@ Note that `given` variables is lazy-evaluated: data in the variables are not cal
 
 ## Installation
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/tatyshev/given2.svg)](https://greenkeeper.io/)
+
 You can install `given2` using `npm` or `yarn`
 
 ```

@@ -10,6 +10,10 @@
   </a>
 
   <img src="https://travis-ci.org/tatyshev/given2.svg?branch=v2"/>
+
+  <a href="https://greenkeeper.io/">
+    <img src="https://badges.greenkeeper.io/tatyshev/given2.svg"/>
+  </a>
 </p>
 
 <p align="center">
@@ -27,8 +31,6 @@ Basically the given helper will register a beforeEach and a afterEach hook that 
 Note that `given` variables is lazy-evaluated: data in the variables are not calculated until they are accessed for the first time.
 
 ## Installation
-
-[![Greenkeeper badge](https://badges.greenkeeper.io/tatyshev/given2.svg)](https://greenkeeper.io/)
 
 You can install `given2` using `npm` or `yarn`
 

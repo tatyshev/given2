@@ -21,7 +21,7 @@
 </p>
 
 <p align="center">
-  <img src="https://github.com//tatyshev/given2/blob/v2/static/example.png?raw=true"/>
+  <img src="https://raw.githubusercontent.com/tatyshev/given2/master/static/example.png"/>
 </p>
 
 > Currently `given2` supports only `jasmine`, `mocha` and `jest`.

@@ -1,10 +1,9 @@
 const given = require('./given');
 
-let count = 1;
-
 describe('given', () => {
+  given('count', () => 1);
   // eslint-disable-next-line no-return-assign
-  given('one', () => (count += 1));
+  given('one', () => (given.count += 1));
 
   it('first', () => {
     given('first', () => 'foo');
@@ -15,6 +14,7 @@ describe('given', () => {
   });
 
   it('second', () => {
+    given('count', () => 2);
     given('second', () => 'bar');
 
     expect(given.one).toBe(3);

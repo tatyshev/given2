@@ -34,9 +34,25 @@ Note that `given` variables is lazy-evaluated: data in the variables are not cal
 
 You can install `given2` using `npm` or `yarn`
 
-```
+```js
 npm install given2
 yarn add given2
+```
+
+`Given2` also can be automatically setup into global namespace
+by simply importing `setup`.
+
+```js
+import 'given2/setup';
+```
+
+Or configure your testing framework.
+
+```js
+// Config example for jest
+{
+  "setupFiles": ["given2/setup"]
+}
 ```
 
 ## Usage

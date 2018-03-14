@@ -39,8 +39,9 @@ npm install given2
 yarn add given2
 ```
 
-`Given2` also can be automatically setup into global namespace
-by simply importing `setup`.
+## Global namespace `>= 2.1.2`
+
+`given2` also can be imported into global namespace by simply requiring `given2/setup`.
 
 ```js
 import 'given2/setup';
@@ -54,6 +55,8 @@ Or configure your testing framework.
   "setupTestFrameworkScriptFile": "given2/setup"
 }
 ```
+
+Аfter that you can use `given2` in your spec files without importing
 
 ## Usage
 

@@ -24,7 +24,7 @@
   <img src="https://raw.githubusercontent.com/tatyshev/given2/master/static/example.png"/>
 </p>
 
-> Currently `given2` supports only `jasmine`, `mocha` and `jest`.
+> ⚠️Currently `given2` supports only `jasmine`, `mocha` and `jest`.
 
 Basically the given helper will register a beforeEach and a afterEach hook that will create a memoized get accessor with the given name. The value will be cached across multiple test suits in the same example but not across examples.
 
@@ -51,7 +51,7 @@ Or configure your testing framework.
 ```js
 // Config example for jest
 {
-  "setupTestFrameworkScriptFile": ["given2/setup"]
+  "setupTestFrameworkScriptFile": "given2/setup"
 }
 ```
 

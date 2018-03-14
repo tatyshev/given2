@@ -51,7 +51,7 @@ Or configure your testing framework.
 ```js
 // Config example for jest
 {
-  "setupFiles": ["given2/setup"]
+  "setupTestFrameworkScriptFile": ["given2/setup"]
 }
 ```
 

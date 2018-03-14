@@ -1,4 +1,5 @@
 /* eslint-disable no-undef */
+/* eslint-disable no-debugger */
 
 const given = require('./src/given');
 

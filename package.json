@@ -7,8 +7,9 @@
   "author": "Ruslan Tatyshev <ruslan.tatyshev@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "test": "npm run test:jest && npm run test:jasmine && npm run test:mocha",
-    "test:jest": "jest",
+    "test": "npm run test:jest && npm run test:jest-setup && npm run test:jasmine && npm run test:mocha",
+    "test:jest": "jest --testPathIgnorePatterns .global",
+    "test:jest-setup": "jest src/given.global.spec.js --setupTestFrameworkScriptFile=./setup.js",
     "test:jasmine": "jasmine src/given.spec.js",
     "test:mocha": "mocha src/given.mocha.js",
     "deploy": "webpack && npm publish"

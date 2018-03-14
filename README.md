@@ -56,7 +56,7 @@ Or configure your testing framework.
 }
 ```
 
-Аfter that you can use `given2` in your spec files without importing
+Аfter that you can use `given` in your spec files without importing
 
 ## Usage
 

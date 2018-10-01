@@ -12,6 +12,7 @@
     "test:jest-setup": "jest src/given.global.spec.js --setupTestFrameworkScriptFile=./setup.js",
     "test:jasmine": "jasmine src/given.spec.js",
     "test:mocha": "mocha src/given.mocha.js",
+    "lint": "eslint src/**/*.js",
     "deploy": "webpack && npm publish"
   },
   "devDependencies": {

@@ -1,7 +1,7 @@
 /* eslint import/no-extraneous-dependencies: 0 */
 
-const given = require('./given');
 const { expect } = require('chai');
+const given = require('./given');
 
 let count = 1;
 

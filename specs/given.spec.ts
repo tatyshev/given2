@@ -1,4 +1,4 @@
-const given = require('../src/given');
+import * as given from '../src/given'
 
 describe('given', () => {
   given('count', () => 1);

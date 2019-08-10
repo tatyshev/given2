@@ -1,4 +1,4 @@
-const Container = require('./container');
+const Container = require('../src/container');
 
 const given = new Container();
 

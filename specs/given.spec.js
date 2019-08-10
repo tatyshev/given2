@@ -1,4 +1,4 @@
-const given = require('./given');
+const given = require('../src/given');
 
 describe('given', () => {
   given('count', () => 1);

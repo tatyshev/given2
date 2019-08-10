@@ -9,10 +9,10 @@
   "scripts": {
     "test": "npm run test:jest && npm run test:jest-setup && npm run test:jasmine && npm run test:mocha",
     "test:jest": "jest --testPathIgnorePatterns .global",
-    "test:jest-setup": "jest src/given.global.spec.js --setupTestFrameworkScriptFile=./setup.js",
-    "test:jasmine": "jasmine src/given.spec.js",
-    "test:mocha": "mocha src/given.mocha.js",
-    "lint": "eslint src/**/*.js",
+    "test:jest-setup": "jest specs/given.global.spec.js --setupTestFrameworkScriptFile=./setup.js",
+    "test:jasmine": "jasmine specs/given.spec.js",
+    "test:mocha": "mocha specs/given.mocha.js",
+    "lint": "eslint src/**/*.js specs/**/*.js",
     "deploy": "webpack && npm publish"
   },
   "jest": {

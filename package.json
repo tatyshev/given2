@@ -3,6 +3,7 @@
   "version": "2.1.7",
   "main": "src/given.js",
   "description": "Lazy variable evaluation for Jasmine, Mocha, Jest specs, inspired by Rspec's let",
+  "homepage": "https://github.com/tatyshev/given2",
   "repository": {
     "type": "git",
     "url": "git@github.com:tatyshev/given2.git"

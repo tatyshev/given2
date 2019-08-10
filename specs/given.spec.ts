@@ -1,9 +1,9 @@
-const given = require('./given');
+import * as given from '../src/given'
 
 describe('given', () => {
   given('count', () => 1);
   // eslint-disable-next-line no-return-assign
-  given('one', () => (given.count += 1));
+  given('one', () => (given.count + 1));
 
   it('first', () => {
     given('first', () => 'foo');

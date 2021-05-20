@@ -79,11 +79,11 @@ module.exports = function Container(run) {
   function define(options, fn) {
     const env = given.__env__;
     const { name, immediate, cache } = options;
-    env[name] = undefined;
+    delete env[name];
 
     const handler = () => {
       if (cache === false) return fn();
-      if (env[name]) return env[name];
+      if (name in env) return env[name];
       env[name] = fn();
       return env[name];
     };
@@ -150,7 +150,7 @@ module.exports = function Container(run) {
     enumerable: false,
     writable: false,
     value: () => {
-      const keys = Object.keys(given.__env__);
+      const keys = Object.keys(given);
       given.__env__ = {};
       keys.forEach(k => delete given[k]);
     },
@@ -162,7 +162,7 @@ module.exports = function Container(run) {
     writable: false,
     value: (key) => {
       if (key) {
-        given.__env__[key] = undefined;
+        delete given.__env__[key];
       } else {
         given.__env__ = {};
       }

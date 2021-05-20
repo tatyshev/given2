@@ -40,6 +40,14 @@ describe('Container', () => {
       given('random', () => Math.random());
       expect(given.random).toBe(given.random);
     });
+
+    it('should cache falsy variable values', () => {
+      let counter = 0;
+      // eslint-disable-next-line no-plusplus
+      given('zero', () => counter++);
+      expect(given.zero).toBe(0);
+      expect(given.zero).toBe(0);
+    });
   });
 
   describe('without caching', () => {

@@ -146,7 +146,7 @@ const ensureProperty = (property) => {
 
   if (REG_RESERVED.test(property)) {
     throw new Given2Error([
-      'Sorry, Given2 use properties that begins and ends with "__" for internal causes.',
+      'Sorry, Given2 uses properties that begins and ends with "__" for internal causes.',
       'Could you use an another name?',
     ]);
   }
